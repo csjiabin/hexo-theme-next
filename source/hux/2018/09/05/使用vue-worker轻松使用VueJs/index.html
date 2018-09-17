@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="Xk9YWz2-rBE9P5__qdWz3nUr4zb9bIDSdANHpezjB04" />
+    <meta name="baidu-site-verification" content="aifbHeRmzy" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="description" content="Goals determine what you going to be!!">
+    <meta name="keyword" content="hjb, csjiabin, csjiabin Blog, 黄佳滨的博客, huangjiabin, 黄佳滨, html, css, javascript, js, JavaScript, Node, node, nodejs, h5, html5, 小程序, vue">
+    <title>使用vue-worker轻松使用Vue.js - CSjiabin的博客 | CSjiabin&#39;s Blog</title>
+    <!-- Web App Manifest -->
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://csjiabin.github.io">
+
+    <link rel="manifest" href="/hux/pwa/manifest.json">
+  
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/hux/img/favicon.ico">
+  
+    <!-- Safari Webpage Icon    by-HJB -->
+    <link rel="apple-touch-icon" href="/hux/img/apple-touch-icon.png">
+    <!-- Bootstrap Core CSS -->
+      <link rel="stylesheet" href="/hux/css/bootstrap.min.css">
+  
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="/hux/css/hux-blog.min.css">
+  
+      <!-- Pygments Github CSS -->
+      <link rel="stylesheet" href="/hux/css/highlight.css">
+
+      <link rel="stylesheet" href="/hux/css/rocket.css">
+
+      <link rel="stylesheet" href="/hux/css/signature.css">
+  
+      <link rel="stylesheet" href="/hux/css/toc.css">
+    <link rel="stylesheet" type="text/css" href="https://c.mipcdn.com/static/v1/mip.css">
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+  
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/bdc5c12d.js","daovoice")
+      daovoice('init', {
+        app_id: "bdc5c12d"
+      });
+      daovoice("update");
+    </script>
+      
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+    <!-- hack iOS CSS :active style -->
+    <body ontouchstart="">
+        <!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/hux/img/home-bg-o.jpg')
+            /*post*/
+        
+    }
+    
+    #signature{
+        background-image: url('/hux/img/signature/white.png');
+    }
+    
+</style>
+
+<link rel="stylesheet" href="/hux/css/post-style.css">
+
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/hux/tags/#vue" title="vue">vue</a>
+                            
+                        </div>
+                        <h1>使用vue-worker轻松使用Vue.js</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by CSjiabin on
+                            2018-09-05
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+        <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/hux/">CSjiabin&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <!-- <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" name="content" class="form-control" placeholder="Search">
+                    </div>
+                </form> -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/hux/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hux/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hux/archives/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/hux/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+        <!-- Main Content -->
+        
+<!-- Image to hack wechat -->
+<!-- <img src="https://csjiabin.github.io/hux/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>像许多开发人员一样，当Web Workers首次出现在Web开发环境中时，我非常热情，并且对我可以用它们完成的各种惊人事情感到厌烦。然而，当我意识到工作人员必须从托管在Web服务器上的单独文件加载时，我的热情很快就受到了打击。这似乎是一个巨大的痛苦，不值得努力。结合API开销，自从我第一次尝试到现在为止，我还没有真正再次使用过工作者。看着<code>vue-worker</code>，我突然惊讶于我的Vue.js应用程序可以通过一个简单的API和没有外部文件来完成什么。</p>
+</blockquote>
+<p><a href="https://github.com/israelss/vue-worker" target="_blank" rel="noopener">vue-worker</a>（或者说是同一 <a href="https://github.com/israelss" target="_blank" rel="noopener">作者</a> 的 <a href="https://github.com/israelss/simple-web-worker" target="_blank" rel="noopener">simple-web-worker</a> ）的核心前提是Web Workers可以从Data URI初始化，它可以只是一个字符串化的函数。</p>
+<p><code>vue-worker</code>通过一个简单易懂的API来解决其中涉及的复杂性，允许您像promises一样轻松执行多头函数。</p>
+<h3><span id="安装"> 安装</span></h3>
+<p>通过 <strong>Yarn</strong> 或 <strong>NPM</strong> 安装<code>vue-worker</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Yarn</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn add vue-worker</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> NPM</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install vue-worker --save</span></span><br></pre></td></tr></table></figure>
+<p>现在，启用<code>VueWorker</code>插件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/main.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> VueWorker <span class="keyword">from</span> <span class="string">'vue-worker'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'App.vue'</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(VueWorker);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  render: <span class="function"><span class="params">h</span> =&gt;</span> h(App)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这使您的组件能够访问<code>this.$worker</code>。</p>
+<h3><span id="在worker中运行函数"> 在Worker中运行函数</span></h3>
+<p>现在，您可以在组件内部使用<code>this.$worker.run(function, args[])</code>。</p>
+<p>这运行一个输出 <strong>Hello，World</strong> 的函数！在组件安装时的工作线程中：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">  mounted() &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">this</span>.$worker.run(<span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="string">`Hello, <span class="subst">$&#123;arg&#125;</span>!`</span></span></span><br><span class="line"><span class="actionscript">    &#125;, [<span class="string">'World'</span>])</span></span><br><span class="line"><span class="javascript">    .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(result)</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="javascript">    .catch(<span class="function"><span class="params">e</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.error(e)</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3><span id="可重复使用-workers"> 可重复使用 Workers</span></h3>
+<p>您可以创建可重复使用的<code>worker</code> 代理 <code>this.$worker.create([{message, func}])</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">  data() &#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">      myWorker: <span class="literal">null</span></span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">  created() &#123;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">this</span>.myWorker = <span class="keyword">this</span>.$worker.create([</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">message</span>: <span class="string">'message1'</span>, <span class="attr">func</span>: <span class="function">(<span class="params">arg</span>) =&gt;</span> <span class="string">`Output 1 <span class="subst">$&#123;arg&#125;</span>`</span>&#125;,</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">message</span>: <span class="string">'message2'</span>, <span class="attr">func</span>: <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">'Output 2'</span>&#125;</span></span><br><span class="line"><span class="undefined">    ])</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">this</span>.myWorker.postMessage(<span class="string">'message1'</span>, [<span class="string">'Boop!'</span>])</span></span><br><span class="line"><span class="javascript">    .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(result)</span></span><br><span class="line"><span class="undefined">    &#125;)</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你还可以做更多的事情，看看<code>vue-worker</code>和<code>simple-worker</code>文档。</p>
+
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/hux/2018/09/01/HTML5与HTML4的区别/" data-toggle="tooltip" data-placement="top" title="HTML5与HTML4的区别">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+                <!--Gitalk评论start  -->
+                
+                <!-- Gitalk end -->
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/hux/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/hux/tags/#vue" title="vue">vue</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://csjiabin.github.io" target="_blank">CSjiabin&#39;s Blog</a></li>
+                    
+                        <li><a href="http://zhengwuyang.com" target="_blank">WY</a></li>
+                    
+                        <li><a href="https://www.jianshu.com/u/f7f87e65552a" target="_blank">简书·csjiabin</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "csjiabin";
+    var disqus_identifier = "https://csjiabin.github.io/2018/09/05/使用vue-worker轻松使用VueJs/";
+    var disqus_url = "https://csjiabin.github.io/2018/09/05/使用vue-worker轻松使用VueJs/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+        <!-- Footer -->
+        <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.jianshu.com/u/f7f87e65552a">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">简</i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/csjiabin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/csjiabin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; CSjiabin&#39;s Blog 2018 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="https://csjiabin.github.io">CSjiabin</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=csjiabin&repo=csjiabin.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/hux/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/hux/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/hux/js/hux-blog.min.js"></script>
+
+<!-- Service Worker -->
+
+    <script type="text/javascript">
+        if(navigator.serviceWorker){
+            // For security reasons, a service worker can only control the pages that are in the same directory level or below it. That's why we put sw.js at ROOT level.
+            navigator.serviceWorker
+                .register('/hux/sw.js')
+                .then((registration) => {console.log('Service Worker Registered. ', registration)})
+                .catch((error) => {console.log('ServiceWorker registration failed: ', error)})
+        }
+    </script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/hux/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-124238838-1';
+    var _gaDomain = 'csjiabin.github.io';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+    
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?UA-124238838-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124238838-1');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '2620e69674d25088f870bef114e8ff89';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<script src="https://c.mipcdn.com/static/v1/mip.js"></script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+<!-- Side Catalog -->
+
+
+
+
+        <a id="rocket" href="#top" class=""></a>
+        <script type="text/javascript" src="/hux/js/totop.js?v=1.0.0" async=""></script>
+        <script type="text/javascript" src="/hux/js/toc.js?v=1.0.0" async=""></script>
+        <!-- Image to hack wechat -->
+        <img src="/hux/img/apple-touch-icon.png" width="0" height="0" />
+         <!-- Migrate from head to bottom, no longer block render and still work -->
+    </body>
+</html>
