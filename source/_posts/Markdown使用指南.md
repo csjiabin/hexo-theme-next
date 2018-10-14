@@ -6,15 +6,15 @@ tags:
   - Markdown
 ---
 
-### 前言
+## 前言
 
 什么是 Markdown？Markdown 是一种轻量级的「标记语言」，通常为程序员群体所用，目前它已是全球最大的技术分享网站 GitHub 和技术问答网站 StackOverFlow 的御用书写格式。
 非技术类笔记用户，千万不要被「标记」、「语言」吓到，Markdown 的语法十分简单，常用的标记符号不超过十个，用于日常写作记录绰绰有余，不到半小时就能完全掌握。
 就是这十个不到的标记符号，却能让人优雅地沉浸式记录，专注内容而不是纠结排版，达到「心中无尘，码字入神」的境界。
 
-### 利用 Markdown 可以做什么？
+## 利用 Markdown 可以做什么？
 
-#### 标题
+### 标题
 
 标题是每篇文章必备而且最常用的格式。
 在 Markdown 中，如果想将一段文字定义为标题，只需要在这段文字前面加上 #，再在 # 后加一个空格即可。还可增加二、三、四、五、六级标题，总共六级，只需要增加 # ，增加一个 # ，标题字号相应降低一级。
@@ -33,7 +33,7 @@ tags:
 
 ![效果](/uploads/post/WX20180826-152410@2x.png)
 
-#### 列表
+### 列表
 
 列表格式也很常用，它可以让你的文稿变得井井有条。在 Markdown 中，你只需要在文字前面加上 - 就可以了；如果你希望是有序列表，在文字前面加上 1. 2. 3. 即可。
 
@@ -76,7 +76,7 @@ tags:
 2. 列表 2
 3. 列表 3
 
-#### 引用
+### 引用
 
 如果你需要在文稿中引用一段别处的句子，那么就要用到「引用」格式。
 
@@ -98,78 +98,7 @@ tags:
 
 由上面例子可以看出，想要在上一次引用中嵌套一层引用，只需多加一个>，理论上可以无限嵌套，我就不整那么多了，注意：多层嵌套的`>`是不需要连续在一起的，只要在一行就可以了，中间允许有空格，但是为了好看，还是把排版搞好吧。
 
-#### 分割线
-
-分割线的语法只需要另起一行，分割线可以由\* - \_（星号，减号，底线）这 3 个符号的至少 3 个符号表示，注意至少要 3 个，且不需要连续，有空格也可以。代码如下：
-
-```
-这是第一段内容
-
----
-
-这是第二段内容
-```
-
-<div style="text-align:center;color:gray;">效果如下：</div>
-这是第一段内容
-
----
-
-这是第二段内容
-
-#### 链接与图片
-
-链接：在 Markdown 中，插入链接只需要使用 `[显示文本](链接地址)` 即可。
-
-图片：在 Markdown 中，插入图片只需要使用 `![显示文本](图片链接地址)`即可。
-
-> 注：插入图片的语法和链接的语法很像，只是前面多了一个 `!`
-
-```
-**插入链接：**
-[气宇轩昂](http://example.com/)
-
-**插入图片：**
-![这是一张图](/uploads/post/home-bg-o.jpg)
-```
-
-<div style="text-align:center;color:gray;">效果如下：</div>
-
-**插入链接：**
-[气宇轩昂](http://example.com/)
-
-**插入图片：**
-![这是一张图](/uploads/post/home-bg-o.jpg)
-
-上述方法只是单纯把图片显示出来，无法自定义设置图片大小，如果图片很大的话就会铺满屏幕或者超高，排版上不好看。
-
-**通过 `img` 标签控制宽高:**
-
-```html
-<img src="http://pic15.photophoto.cn/20100615/0006019058815826_b.jpg"  height="330" width="400">
-<!-- 或者 -->
-<img src="/uploads/post/home-bg-o.jpg" style="height:330;width:400px">
-```
-
-<div style="text-align:center;color:gray;">效果如下：</div>
-<img src="/uploads/post/home-bg-o.jpg" style="height:330;width:400px;">
-
-**通过 `<div>` 标签和 `align` 属性控制对齐方式:**
-
-```html
-<div align="center">
-  <img src="/uploads/post/home-bg-o.jpg" style="width:350px;">
-  <img src="/uploads/post/home-bg.jpg" style="width:350px;">
-</div>
-```
-
-<div style="text-align:center;color:gray;">效果如下：</div>
-<div align="center">
-  <img src="/uploads/post/home-bg-o.jpg" style="width:350px;display:inline-block;">
-  <img src="/uploads/post/home-bg.jpg" style="width:350px;display:inline-block;">
-</div>
-
-#### 代码框
+### 代码框
 
 这个就比较重要了，很多时候都需要展示出一些代码
 如果代码量比较少，只有单行的话，可以用单反引号包起来，如下：
@@ -204,7 +133,58 @@ tags:
 
 多行用三个反引号，如果要写注释，可以在反引号后面写
 
-#### 表格
+### 链接与图片
+
+链接：在 Markdown 中，插入链接只需要使用 `[显示文本](链接地址)` 即可。
+
+图片：在 Markdown 中，插入图片只需要使用 `![显示文本](图片链接地址)`即可。
+
+> 注：插入图片的语法和链接的语法很像，只是前面多了一个 `!`
+
+```
+**插入链接：**
+[气宇轩昂](http://example.com/)
+
+**插入图片：**
+![这是一张图](/uploads/post/home-bg-o.jpg)
+```
+
+<div style="text-align:center;color:gray;">效果如下：</div>
+
+**插入链接：**
+[气宇轩昂](http://example.com/)
+
+**插入图片：**
+![这是一张图](/uploads/post/home-bg-o.jpg)
+
+上述方法只是单纯把图片显示出来，无法自定义设置图片大小，如果图片很大的话就会铺满屏幕或者超高，排版上不好看。
+
+**通过 `img` 标签控制宽高:**
+
+```html
+<img src="http://pic15.photophoto.cn/20100615/0006019058815826_b.jpg"  height="330" width="400">
+<!-- 或者 -->
+<img src="/uploads/post/home-bg-o.jpg" style="height:200px;width:400px">
+```
+
+<div style="text-align:center;color:gray;">效果如下：</div>
+<img src="/uploads/post/home-bg-o.jpg" style="height:200px;width:400px;">
+
+**通过 `<div>` 标签和 `align` 属性控制对齐方式:**
+
+```html
+<div align="center">
+  <img src="/uploads/post/home-bg-o.jpg" style="width:300px;">
+  <img src="/uploads/post/home-bg.jpg" style="width:300px;">
+</div>
+```
+
+<div style="text-align:center;color:gray;">效果如下：</div>
+<div align="center" class="img-content" style="display:flex;">
+  <img src="/uploads/post/home-bg-o.jpg" style="width:300px;display:inline-block !important;margin:0;"><img src="/uploads/post/home-bg.jpg" style="width:300px;display:inline-block !important;margin:0 20px;">
+</div>
+
+### 表格
 
 当你需要在 Markdown 文稿中键入表格，代码如下：
 
@@ -240,7 +220,7 @@ tags:
 
 从这 3 种不同写法看，表格的格式不一定要对的非常齐，但是为了好看，对齐肯定是最好的，第一种的分割线后面的冒号表示对齐方式，写在左边表示左对齐，右边为右对齐，两边都写表示居中，还是有点意思的。
 
-#### 强调
+### 强调
 
 ```
 *字体倾斜*
@@ -258,7 +238,7 @@ _字体倾斜_
 
 一个星号或者是一个下划线包起来，会转换为`<em>`倾斜，如果是 2 个，会转换为`<strong>`加粗。
 
-#### 转义
+### 转义
 
 ```
 * \\
@@ -284,7 +264,7 @@ _字体倾斜_
 
 就不一一列举了，基本上跟 js 转义是一样的
 
-#### 删除线
+### 删除线
 
 ```
 ~~请删掉我吧~~
@@ -293,3 +273,22 @@ _字体倾斜_
 <div style="text-align:center;color:gray;">效果如下：</div>
 
 ~~请删掉我吧~~
+
+### 分割线
+
+分割线的语法只需要另起一行，分割线可以由\* - \_（星号，减号，底线）这 3 个符号的至少 3 个符号表示，注意至少要 3 个，且不需要连续，有空格也可以。代码如下：
+
+```
+这是第一段内容
+
+---
+
+这是第二段内容
+```
+
+<div style="text-align:center;color:gray;">效果如下：</div>
+这是第一段内容
+
+---
+
+这是第二段内容
