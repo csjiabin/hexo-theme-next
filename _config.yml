@@ -29,6 +29,7 @@ i18n_dir: :lang
 skip_render:
   - README.md
   - hux/**
+  - example-vue/**
 
 
 # Writing
