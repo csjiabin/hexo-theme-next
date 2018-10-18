@@ -2,6 +2,10 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "algolia": "export HEXO_ALGOLIA_INDEXING_KEY=35251fd833510bf375580b718064be3a && hexo algolia",
+    "publish": "hexo clean && hexo g && gulp && hexo d"
+  },
   "hexo": {
     "version": "3.7.1"
   },
