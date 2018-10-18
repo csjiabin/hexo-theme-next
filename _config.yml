@@ -4,19 +4,19 @@
 
 # Site
 title: CSjiabin's Blog
-subtitle:
+? subtitle
 description: Goals determine what you going to be!!
 keywords: hjb, csjiabin, csjiabin Blog, 黄佳滨的博客, huangjiabin, 黄佳滨, html, css, javascript, js, JavaScript, Node, node, nodejs, h5, html5, 小程序, vue
 author: csjiabin
 language: zh-CN
-timezone:
+? timezone
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://csjiabin.github.io
 root: /
 permalink: :year/:month/:day/:title/
-permalink_defaults:
+? permalink_defaults
 
 # Directory
 source_dir: source
@@ -32,7 +32,6 @@ skip_render:
   - example/**
   - 404.html
 
-
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
@@ -47,21 +46,21 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace:
-  
+  ? tab_replace
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
-category_map:
-tag_map:
+? category_map
+? tag_map
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -94,9 +93,20 @@ search:
   limit: 10000
 
 algolia:
-  applicationID: '247B2CASJT'
-  indexName: 'csjiabin.github.io'
+  applicationID: "247B2CASJT"
+  apiKey: "35251fd833510bf375580b718064be3a"
+  adminApiKey: "4c4a46ce625f2dd660767266c2d16df6"
+  indexName: "csjiabin.github.io"
   chunkSize: 5000
+  fields:
+    - title
+    - tags
+    - slug
+    - excerpt
+    - excerpt:strip
+    - photos
+    - gallery
+    - content:strip
 
 feed:
   type: atom
@@ -105,6 +115,6 @@ feed:
 
 # 自动生成sitemap
 sitemap:
-    path: sitemap.xml
+  path: sitemap.xml
 baidusitemap:
-    path: baidusitemap.xml
+  path: baidusitemap.xml
