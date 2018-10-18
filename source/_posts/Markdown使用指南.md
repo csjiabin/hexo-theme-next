@@ -173,15 +173,15 @@ tags:
 **通过 `<div>` 标签和 `align` 属性控制对齐方式:**
 
 ```html
-<div align="center">
+<div style="display:flex;justify-content:center;">
   <img src="/uploads/post/home-bg-o.jpg" style="width:300px;">
   <img src="/uploads/post/home-bg.jpg" style="width:300px;">
 </div>
 ```
 
 <div style="text-align:center;color:gray;">效果如下：</div>
-<div align="center" class="img-content" style="display:flex;">
-  <img src="/uploads/post/home-bg-o.jpg" style="width:300px;display:inline-block !important;margin:0;"><img src="/uploads/post/home-bg.jpg" style="width:300px;display:inline-block !important;margin:0 20px;">
+<div class="img-content" style="display:flex;justify-content:center;">
+  <img src="/uploads/post/home-bg-o.jpg" style="width:350px;height:200px;display:inline-block !important;margin:0;"><img src="/uploads/post/home-bg.jpg" style="width:350px;height:200px;display:inline-block !important;margin:0 20px;">
 </div>
 
 ### 表格

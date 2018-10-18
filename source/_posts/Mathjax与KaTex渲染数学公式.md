@@ -2,6 +2,7 @@
 title: Mathjax与KaTex渲染数学公式
 categories: JavaScript
 date: 2018-09-16 20:39:09
+mathjax: true
 tags:
   - Mathjax
   - KaTex
