@@ -83,7 +83,10 @@ theme: next-reloaded
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/csjiabin/csjiabin.github.io.git
+  repository:
+    github: https://github.com/csjiabin/csjiabin.github.io.git
+    coding: https://git.coding.net/csjiabin/csjiabin.coding.me.git
+    gitee: 
   branch: master
 
 search:
