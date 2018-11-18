@@ -31,25 +31,25 @@ gulp.task('minify-js', function () {
     .pipe(uglify())
     .pipe(gulp.dest('./public'));
 });
-// 压缩图片
-gulp.task('minify-images', function () {
-  return gulp.src('./public/images/**/*.{png,jpg,gif,ico}')
-    .pipe(imagemin(
-      [imagemin.gifsicle({
-          'optimizationLevel': 3
-        }),
-        imagemin.jpegtran({
-          'progressive': true
-        }),
-        imagemin.optipng({
-          'optimizationLevel': 7
-        }),
-        imagemin.svgo()
-      ], {
-        'verbose': true
-      }))
-    .pipe(gulp.dest('./public/images'))
-});
+// // 压缩图片
+// gulp.task('minify-images', function () {
+//   return gulp.src('./public/images/**/*.{png,jpg,gif,ico}')
+//     .pipe(imagemin(
+//       [imagemin.gifsicle({
+//           'optimizationLevel': 3
+//         }),
+//         imagemin.jpegtran({
+//           'progressive': true
+//         }),
+//         imagemin.optipng({
+//           'optimizationLevel': 7
+//         }),
+//         imagemin.svgo()
+//       ], {
+//         'verbose': true
+//       }))
+//     .pipe(gulp.dest('./public/images'))
+// });
 // 压缩图片
 gulp.task('minify-images-uploads', function () {
   return gulp.src('./public/uploads/**/*.{png,jpg,gif,ico}')
@@ -71,5 +71,5 @@ gulp.task('minify-images-uploads', function () {
 });
 // 默认任务
 gulp.task('default', [
-  'minify-html', 'minify-css', 'minify-js', 'minify-images', 'minify-images-uploads'
+  'minify-html', 'minify-css', 'minify-js', 'minify-images-uploads'
 ]);

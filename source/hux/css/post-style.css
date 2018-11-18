@@ -1,11 +1,1 @@
-.post-container>ul,
-.post-container>ol {
-  margin-left: 20px;
-}
-.post-container ul ul,
-.post-container ol ol {
-  padding-left: 20px;
-}
-.post-container img {
-  width: auto;
-}
+.post-container>ol,.post-container>ul{margin-left:20px}.post-container ol ol,.post-container ul ul{padding-left:20px}.post-container img{width:auto}

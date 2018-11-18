@@ -511,15 +511,15 @@ valine:
 # Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
   enable: true
-  mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
+  mint: false # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
-  lazy: true # Comments lazy loading with a button
+  lazy: false # Comments lazy loading with a button
   cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
   github_user: csjiabin # MUST HAVE, Your Github Username
-  github_repo: # MUST HAVE, The name of the repo you use to store Gitment comments
+  github_repo: csjiabin.github.io # MUST HAVE, The name of the repo you use to store Gitment comments
   client_id: 7bd18cd14435f89a4dfb # MUST HAVE, Github client id for the Gitment
-  client_secret: 87b3c3f9d0aa37f71d64aac84331b2e5e769b3a1 # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  client_secret: edfac80af69d043ce03825645137405865def794 # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
@@ -695,9 +695,9 @@ algolia_search:
   hits:
     per_page: 10
   labels:
-    input_placeholder: Search for Posts
-    hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: "${hits} results found in ${time} ms"
+    input_placeholder: 搜索
+    hits_empty: "未发现与 「${query}」相关的内容"
+    hits_stats: "${hits} 条相关条目, 使用了 ${time} 毫秒"
 
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
