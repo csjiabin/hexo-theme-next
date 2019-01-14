@@ -4,8 +4,8 @@
 
 # Site
 title: CSjiabin's Blog
-? subtitle
-description: Goals determine what you going to be!!
+subtitle: Goals determine what you going to be!!
+description: I never consider ease and joyfulness as the purpose of life itself.
 keywords: hjb, csjiabin, csjiabin Blog, 黄佳滨的博客, huangjiabin, 黄佳滨, html, css, javascript, js, JavaScript, Node, node, nodejs, h5, html5, 小程序, vue
 author: csjiabin
 language: zh-CN
@@ -86,7 +86,7 @@ deploy:
   repository:
     github: https://github.com/csjiabin/csjiabin.github.io.git
     coding: https://git.coding.net/csjiabin/csjiabin.coding.me.git
-    gitee: https://gitee.com/csjiabin/csjiabin.gitee.io.git
+    # gitee: https://gitee.com/csjiabin/csjiabin.gitee.io.git
   branch: master
 
 search:

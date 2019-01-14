@@ -122,6 +122,7 @@ menu:
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
+  # top100: /top100/ || sitemap
   #schedule: /schedule/ || calendar
   # sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
@@ -476,7 +477,7 @@ baidu_analytics: 2620e69674d25088f870bef114e8ff89
 
 # Disqus
 disqus:
-  enable: false
+  enable: true
   shortname: csjiabin
   count: true
   lazyload: false
@@ -510,7 +511,7 @@ valine:
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 gitment:
-  enable: true
+  enable: false
   mint: false # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
   lazy: false # Comments lazy loading with a button

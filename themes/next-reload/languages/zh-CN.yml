@@ -4,6 +4,7 @@ title:
   category: 分类
   tag: 标签
   schedule: 日程表
+  top100: 前端Top100
 menu:
   home: 首页
   archives: 归档
@@ -14,6 +15,7 @@ menu:
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益 404
+  top100: 前端Top100
 sidebar:
   overview: 站点概览
   toc: 文章目录
