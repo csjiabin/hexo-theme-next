@@ -96,7 +96,7 @@ $ax^2 + bx + c = 0$
 
 **1.安装**
 
-```shell
+```bash
 # npm
 npm install katex
 npm install -g katex

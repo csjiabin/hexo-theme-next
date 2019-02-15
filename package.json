@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev":"hexo clean && hexo server --debug",
-    "algolia": "export HEXO_ALGOLIA_INDEXING_KEY=35251fd833510bf375580b718064be3a && hexo algolia",
+    "dev": "hexo clean && hexo server --debug",
+    "algolia": "cross-env HEXO_ALGOLIA_INDEXING_KEY=35251fd833510bf375580b718064be3a hexo algolia",
     "publish": "hexo clean && hexo g && gulp && hexo d"
   },
   "hexo": {
@@ -33,5 +33,8 @@
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.1",
     "hexo-wordcount": "^6.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   }
 }

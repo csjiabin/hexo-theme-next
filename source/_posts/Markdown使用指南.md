@@ -105,7 +105,9 @@ tags:
 **单行用**
 
 ```html
-`<p><a href="javascript:;">气宇轩昂</a></p>`
+`
+<p><a href="javascript:;">气宇轩昂</a></p>
+`
 ```
 
 <div style="text-align:center;color:gray;">效果如下：</div>
@@ -120,14 +122,14 @@ tags:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>这是title</title>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>这是title</title>
+  </head>
+  <body>
     <h1>我的第一个标题</h1>
     <p>我的第一个段落。</p>
-</body>
+  </body>
 </html>
 ```
 
@@ -162,9 +164,13 @@ tags:
 **通过 `img` 标签控制宽高:**
 
 ```html
-<img src="http://pic15.photophoto.cn/20100615/0006019058815826_b.jpg"  height="330" width="400">
+<img
+  src="http://pic15.photophoto.cn/20100615/0006019058815826_b.jpg"
+  height="330"
+  width="400"
+/>
 <!-- 或者 -->
-<img src="/uploads/post/home-bg-o.jpg" style="height:200px;width:400px">
+<img src="/uploads/post/home-bg-o.jpg" style="height:200px;width:400px" />
 ```
 
 <div style="text-align:center;color:gray;">效果如下：</div>
@@ -174,8 +180,8 @@ tags:
 
 ```html
 <div style="display:flex;justify-content:center;">
-  <img src="/uploads/post/home-bg-o.jpg" style="width:300px;">
-  <img src="/uploads/post/home-bg.jpg" style="width:300px;">
+  <img src="/uploads/post/home-bg-o.jpg" style="width:300px;" />
+  <img src="/uploads/post/home-bg.jpg" style="width:300px;" />
 </div>
 ```
 
@@ -240,7 +246,7 @@ _字体倾斜_
 
 ### 转义
 
-```
+```md
 * \\
 * \`
 * \~
@@ -253,14 +259,14 @@ _字体倾斜_
 
 <div style="text-align:center;color:gray;">效果如下：</div>
 
-- \\
-- \`
-- \~
-- \_
-- \-
-- \+
-- \.
-- \!
+1. \\
+2. \`
+3. \~
+4. \_
+5. \-
+6. \+
+7. \.
+8. \!
 
 就不一一列举了，基本上跟 js 转义是一样的
 

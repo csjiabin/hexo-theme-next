@@ -22,24 +22,24 @@ tags:
 
 ### Hexo 相关命令总结
 
-```shell
-$ hexo init #初始化一个项目
+```bash
+hexo init #初始化一个项目
 
-$ hexo new page "xxx" #生成页面
+hexo new page "xxx" #生成页面
 
-$ hexo new "" #生成文章
+hexo new "" #生成文章
 
-$ hexo clean #清除缓存
+hexo clean #清除缓存
 
-$ hexo s  #启动本地服务
+hexo s  #启动本地服务
 
-$ hexo g  #保存修改，生成文件
+hexo g  #保存修改，生成文件
 
-$ hexo d  #发布到远程
+hexo d  #发布到远程
 
-$ npm install --save xxx  #安装插件
+npm install --save xxx  #安装插件
 
-$ npm unstall xxx #卸载插件
+npm unstall xxx #卸载插件
 ```
 
 上述命令将贯穿于整个博客过程，不难，能动手尽量别复制粘贴
@@ -53,7 +53,7 @@ $ npm unstall xxx #卸载插件
 
 如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。
 
-```shell
+```bash
 $ npm install -g hexo-cli
 ```
 
@@ -72,19 +72,19 @@ $ npm install -g hexo-cli
 
 cURL:
 
-```shell
+```bash
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 ```
 
 Wget:
 
-```shell
+```bash
 wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 ```
 
 安装完成后，重启终端并执行下列命令即可安装 Node.js。
 
-```shell
+```bash
 nvm install stable
 ```
 
@@ -98,7 +98,7 @@ nvm install stable
 
 所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。
 
-```shell
+```bash
 npm install -g hexo-cli
 ```
 
@@ -109,7 +109,7 @@ npm install -g hexo-cli
 
 #### 初始化
 
-```shell
+```bash
 git clone https://github.com/csjiabin/hexo-theme-hux.git
 cd hexo-theme-hux
 npm install
@@ -139,7 +139,7 @@ featured-tags: true # whether or not using Feature-Tags
 
 #### 撰写博文
 
-```shell
+```bash
 hexo new post <post name>  # 或者`hexo new <post name>`生成文章
 ```
 
@@ -161,7 +161,7 @@ tags:
 
 启动本地服务调试
 
-```shell
+```bash
 hexo s --debug
 ```
 
@@ -196,7 +196,7 @@ deploy:
 
 配置完`_config.yml`文件后，在命令后执行以下命令：
 
-```shell
+```bash
 hexo generate(g)   # 把文章生成页面
 hexo deploy(d)    # 部署到github可与hexo g合并为 hexo d -g
 ```

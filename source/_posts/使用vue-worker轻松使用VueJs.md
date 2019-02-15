@@ -15,12 +15,12 @@ tags:
 
 ### 安装
 通过 **Yarn** 或 **NPM** 安装`vue-worker`：
-```shell
+```bash
 # Yarn
-$ yarn add vue-worker
+yarn add vue-worker
 
 # NPM
-$ npm install vue-worker --save
+npm install vue-worker --save
 ```
 现在，启用`VueWorker`插件：
 ```js
