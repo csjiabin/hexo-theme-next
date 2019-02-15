@@ -8,7 +8,7 @@
     "publish": "hexo clean && hexo g && gulp && hexo d"
   },
   "hexo": {
-    "version": "3.7.1"
+    "version": "3.8.0"
   },
   "dependencies": {
     "gulp": "^3.9.1",

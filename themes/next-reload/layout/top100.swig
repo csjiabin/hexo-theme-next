@@ -1,75 +1,57 @@
 {% extends '_layout.swig' %}
-{% import '_macro/post-collapse.swig' as post_template %}
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
-{% block title %}{{ __('title.top100') }} | {{ title }}{% endblock %}
+  {% block title %}{#
+  #}{% set page_title_suffix = ' | ' + title %}{#
 
-{% block page_class %}page-archive{% endblock %}
+  #}{% if page.type === "categories" and not page.title %}{#
+    #}{{ __('title.category') + page_title_suffix }}{#
+  #}{% elif page.type === "tags" and not page.title %}{#
+    #}{{ __('title.tag') + page_title_suffix }}{#
+  #}{% else %}{#
+    #}{{ page.title + page_title_suffix }}{#
+  #}{% endif %}{#
+#}{% endblock %}
+
+{% block page_class %}page-post-detail{% endblock %}
 
 {% block content %}
-  {#####################}
-  {### ARCHIVE BLOCK ###}
-  {#####################}
-  <div class="post-block page">
-  <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
-        <div class="tabs">
-          <ul class="nav-tabs">
-            <li class="tab active"><a href="#hot">排行</a></li>
-            <li class="tab"><a href="trend">趋势</a></li>
+
+  <div id="posts" class="posts-expand">
+    {##################}
+    {### PAGE BLOCK ###}
+    {##################}
+    <div class="post-block page">
+      {% include '_partials/page-header.swig' %}
+      {#################}
+      {### PAGE BODY ###}
+      {#################}
+      <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
+        {{ page.content }}
+        <ul>
+          {% for x in [{text:'热门',sort:"hot"},{text:'趋势',sort:"trend"}] %}
+            <li><a href="{{ url_for(theme.menu.top100).split('||')[0] | trim }}?sort={{x.sort}}">{{x.text}}</a></li>
+          {% endfor %}
+        </ul>
+        <div class="tab-panels">
+          <ul class="tab-content" id="top100-content" style="padding:0">
+            {% for x in [1,2,3,4,5,6,7,8,9,10] %}
+              {% include '_custom/skeleton.swig' %}
+              <div class="divider"></div>
+            {% endfor %}
           </ul>
-          <div class="tab-content">
-            <div class="tab-pane active">
-              <ul>
-              </ul>
-            </div>
-            <div class="tab-pane">
-            <p>2</p>
-            </div>
-          </div>
         </div>
       </div>
-    <div id="posts" class="posts-collapse">
-    <span class="archive-page-counter">
-    排行
-    </span>
-
-      <span class="archive-move-on"></span>
-      {% for post in page.posts %}
-
-        {# Show year #}
-        {% set year %}
-        {% set post.year = date(post.date, 'YYYY') %}
-
-        {% if post.year !== year %}
-          {% set year = post.year %}
-          <div class="collection-title">
-            <{% if theme.seo %}h2{% else %}h1{% endif %} class="archive-year" id="archive-year-{{ year }}">{{ year }}</{% if theme.seo %}h2{% else %}h1{% endif %}>
-          </div>
-        {% endif %}
-        <div class="collection-title" style="opacity: 1; display: block; transform: translateX(0px);">
-            <h2 class="archive-year" id="archive-year-2018" style="opacity: 1; display: block; transform: translateX(0px);">2018</h2>
-          </div>
-        <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-          <header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-            <h3 class="post-title">
-              <a class="post-title-link" href="/2018/11/18/JS中的内存管理/" itemprop="url">
-                <span itemprop="name">JS中的内存管理</span>
-              </a>
-            </h3>
-            <div class="post-meta">
-              <time class="post-time" itemprop="dateCreated" datetime="2018-11-18T18:41:32+08:00" content="2018-11-18">
-                11-18
-              </time>
-            </div>
-          </header>
-        </article>
-        {# endshow #}
-      {% endfor %}
+      {#####################}
+      {### END PAGE BODY ###}
+      {#####################}
     </div>
+    {% include '_partials/breadcrumb.swig' %}
+    {######################}
+    {### END PAGE BLOCK ###}
+    {######################}
   </div>
-  {#########################}
-  {### END ARCHIVE BLOCK ###}
-  {#########################}
+
 {% endblock %}
 
 {% block sidebar %}
@@ -77,25 +59,64 @@
 {% endblock %}
 
 {% block script_extra %}
-<script>
-function getTop100(sort,success,fail){
-$.ajax({
-    url:"https://api.awesomes.cn/repo/top100",
-    data: { sort: sort },
-    success: function(data){
-      success && success(data)
-    },
-    error: function(error){
-      fail && fail(error)
+  {% include '_scripts/pages/post-details.swig' %}
+  <script>
+    function getQueryString(key){
+      var reg = new RegExp("(^|&)"+ key +"=([^&]*)(&|$)");
+      var r = window.location.search.substr(1).match(reg);
+      if(!!r){
+          return  unescape(r[2]);
+      }
+      return null;
     }
-  })
-}
-getTop100("hot",function(data){
-  console.log('hot:',data)
-})
-getTop100("trend",function(data){
-  console.log('trend:',data)
-})
-
-</script>
+    function getTop100(sort,success,fail){
+      $.ajax({
+        url:"https://api.awesomes.cn/repo/top100",
+        data: { sort: sort },
+        success: function(data){
+          success && success(data)
+        },
+        error: function(error){
+          fail && fail(error)
+        }
+      })
+    }
+    var top100Content = $('#top100-content')
+    function renderContent(data){
+      top100Content.html('')
+      for(var i in data) {
+        var item = data[i]
+        var li = document.createElement('li')
+        var link = document.createElement('a')
+        var scord = document.createElement('span')
+        var coverContent = document.createElement('div')
+        var cover = document.createElement('img')
+        var descContent = document.createElement('div')
+        var descTitle = document.createElement('p')
+        var descWrap = document.createElement('p')
+        $(scord).addClass('scord').text(i*1+1)
+        $(cover).attr({
+          src: "https://awesomes.oss-cn-beijing.aliyuncs.com/repo/" + item.cover + "?x-oss-process=style/subject_repo",
+          title: item.name,
+          width: 60
+        })
+        $(coverContent).addClass('cover').append(cover)
+        $(descTitle).addClass('title').text(item.name)
+        $(descWrap).text(item.description_cn)
+        $(descContent).addClass('desc').append(descTitle,descWrap)
+        $(link).attr({
+          target: "_blank",
+          href:"https://github.com/" + item.owner + '/' + item.name
+        }).append(scord,coverContent,descContent)
+        $(li).append(link)
+        top100Content.append(link);
+      }
+      ga && ga('send', 'pageview')
+    }
+    if (getQueryString('sort')==='trend') {
+      getTop100("trend", renderContent)
+    } else {
+      getTop100("hot",renderContent)
+    }
+  </script>
 {% endblock %}
