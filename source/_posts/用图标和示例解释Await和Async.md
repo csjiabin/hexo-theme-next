@@ -16,7 +16,7 @@ JavaScript ES7 中的 async / await 让多个异步 promise 协同工作起来�
 
 在深入之前，我们先简单回顾一下 promise. 如果你已经对 JS 的 promise 有所了解，可放心大胆地跳过这一部分。
 
-#### Promises
+## Promises
 
 在 JavaScript 中，promise 代表非阻塞异步执行的抽象概念。如果你熟悉 Java 的 Future、C# 的 Task, 你会发现 promise 跟它们很像。
 
@@ -81,7 +81,7 @@ fail
 
 想要更详细的 promise 教程，可以参考这篇文章。
 
-#### 问题来了——组合 promise
+## 问题来了——组合 promise
 
 只用一个 promise 很容易搞定。但是，当需要针对复杂异步逻辑编程时，我们很可能最后要同时用好几个 promise 对象。写一堆 then 语句和匿名回调很容易搞得难以控制。
 
@@ -123,7 +123,7 @@ Promise 组合的计算过程。我们用 Promise.all 将两个并行的 promise
 
 对于这个简单的例子，我们最后用了两个 then 回调方法，并且不得不用 Promise.all 来让两个并行的 promise 同时执行。如果我们必须执行更多异步操作，或者加上错误处理会怎么样呢？这种方法最后很容易产生一堆乱七八糟的 then, Promise.all 和回调函数。
 
-#### Async 方法
+## Async 方法
 
 Async 是定义返回 promise 对象函数的快捷方法。
 
@@ -153,7 +153,7 @@ async function asyncF() {
 }
 ```
 
-#### Await
+## Await
 
 我们创建了 promise 但不能同步等待它执行完成。我们只能通过 then 传一个回调函数。不允许等待 promise 是为了鼓励开发非阻塞代码。否则，开发者们总会忍不住执行阻塞操作，因为那比使用 promise 和回调更简单。
 
@@ -225,7 +225,7 @@ async function f() {
 
 函数 f 开始运行并创建了一个 promise 对象。就在那一刻，函数中剩下的部分被封装到一个回调函数中，并在 promise 结束后执行。
 
-#### 错误处理
+## 错误处理
 
 前面大部分例子中，我们都假设 promise 执行成功。因此在 promise 上使用 await 会返回值。如果我们进行 await 的 promise 失败了，async 函数就会发生异常。我们可以用标准的 try / catch 来处理这种情况：
 
@@ -262,7 +262,7 @@ g()
   .catch(err => console.log(err));
 ```
 
-#### 结论
+## 结论
 
 Async / await 是让 promise 更完美的语言结构。它让我们能用更少的代码使用 promise. 然而，async / await 并没有取代普通 promise. 例如，如果在普通函数中或者全局范围内调用 async 函数，我们就没办法使用 await 而要依赖于普通 promise:
 
@@ -286,6 +286,6 @@ Async / await 结构是让使用 promise 更简练的语法糖。每一个 async
 
 ![](/uploads/post/post-async-await-3.jpg)
 
-#### 并发 VS 并行
+## 并发 VS 并行
 
 从这个意义上说，promise 让我们能够将程序分解成并发模块，这些模块可能会也可能不会并行执行。Javascript 实际否并行执行取决于具体实现方法。例如，Node JS 是单线程的，如果 promise 是计算密集型（CPU bound）那就不会有并行处理。但是，如果你用 Nashorn 之类的东西把代码编译成 java 字节码，理论上可能能够将计算密集型的 promise 映射到不同 CPU 核上，从而达到并行效果。所以我认为，promise（不管是普通的还是用了 async / await 的）组成了 JavaScript 应用的并发模块。

@@ -109,6 +109,7 @@ algolia:
     - excerpt:strip
     - photos
     - gallery
+    - content
     - content:strip
 
 feed:
