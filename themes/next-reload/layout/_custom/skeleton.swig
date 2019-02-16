@@ -1,4 +1,4 @@
-<style>
+<style  type="text/css">
   .skeleton{
     display: table;
     width: 100%;

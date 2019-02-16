@@ -275,7 +275,6 @@ $(document).ready(function() {
     },
 
     menu: function(integrator) {
-
       if (CONFIG.motion.async) {
         integrator.next();
       }
@@ -342,7 +341,6 @@ $(document).ready(function() {
         integrator.next();
       }
     },
-
     sidebar: function(integrator) {
       if (CONFIG.sidebar.display === 'always') {
         NexT.utils.displaySidebar();

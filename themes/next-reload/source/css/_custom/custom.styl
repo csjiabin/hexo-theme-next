@@ -15,3 +15,75 @@ body .bg-image {
   background: #eee;
   height: 1px
 }
+
+ul#awesomes-tabs{
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin: 0 18px 20px;
+  & li{
+    display: inline-block;
+    list-style:none;
+    margin: 0 10px;
+    a{
+      text-decoration: none;
+      padding: 5px 12px;
+      border: 1px solid #eee
+    }
+    &.active{
+      a{
+        background: #f9f9f9
+      }
+    }
+  }
+}
+
+ul#awesomes-content{
+  & li.awesomes-li{
+    display: inline-block;
+    list-style:none;
+    margin: 0 10px;
+    padding: 20px 0;
+    border-bottom: 1px dashed #eee
+    a{
+      text-decoration: none;
+      display: flex;
+      border: none;
+      width:100%;
+      box-sizing: border-box;
+      align-items: center
+    }
+    .scord{
+      // transform: scale(1.2);
+        font-size: 1.5em
+      width:80px;
+      text-align: center;
+      padding: 0;
+      margin: 0
+    }
+    .cover{
+      margin: 0 20px;
+      padding: 0;
+      width: 60px;
+      // max-width:100%;
+      border: none;
+    }
+    .content{
+      flex: 1;
+      p{
+        margin:12px 0;
+        line-height: normal
+      }
+      .title{
+        font-weight: 500;
+        font-size: 1.2em
+      }
+      .desc{
+        font-size: 0.8em;
+        font-weight: normal
+      }
+    }
+  }
+}
