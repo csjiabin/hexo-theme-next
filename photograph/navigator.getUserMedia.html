@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拍照1</title>
+</head>
+<body>
+    <button id="take">拍照</button>
+    <br />
+    <video id="v" style="width: 640px;height: 480px;"></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+    <br />
+    <img src="http://placehold.it/640&text=Your%20image%20here%20..." id="photo" alt="photo">
+    <script>
+        !(function () {
+            function userMedia() {
+                return navigator.getUserMedia = navigator.getUserMedia ||
+                    navigator.webkitGetUserMedia ||
+                    navigator.mozGetUserMedia ||
+                    navigator.msGetUserMedia || null;
+            }
+            if (userMedia()) {
+                let videoPlaying = false;
+                let constraints = {
+                    video: true,
+                    audio: false
+                };
+                let video = document.getElementById('v');
+                let media = navigator.getUserMedia(constraints, function (stream) {
+                    let url = window.URL || window.webkitURL;
+                    video.src = url ? url.createObjectURL(stream) : stream;
+                    video.play();
+                    videoPlaying = true;
+                }, function (error) {
+                    console.log("ERROR");
+                    console.log(error);
+                });
+                document.getElementById('take').addEventListener('click', function () {
+                    if (videoPlaying) {
+                        let canvas = document.getElementById('canvas');
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        canvas.getContext('2d').drawImage(video, 0, 0);
+                        let data = canvas.toDataURL('image/webp');
+                        document.getElementById('photo').setAttribute('src', data);
+                    }
+                }, false);
+            } else {
+                console.log("不支持");
+            }
+        })();
+    </script>
+</body>
+</html>
