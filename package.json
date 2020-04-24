@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "hexo clean && hexo server --debug",
     "algolia": "cross-env HEXO_ALGOLIA_INDEXING_KEY=35251fd833510bf375580b718064be3a hexo algolia",
-    "publish": "hexo clean && hexo g && gulp && hexo d"
+    "publish": "hexo clean && hexo g && gulp && hexo d",
+    "gulp": "gulp"
   },
   "hexo": {
     "version": "4.2.0"
@@ -18,6 +19,7 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^2.0.0",
     "hexo": "^4.2.0",
     "hexo-algolia": "^1.3.1",
     "hexo-deployer-git": "^2.1.0",
@@ -34,7 +36,8 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-wordcount": "^6.0.1"
+    "hexo-wordcount": "^6.0.1",
+    "pump": "^3.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0"
