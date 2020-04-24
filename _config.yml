@@ -9,14 +9,14 @@ description: I never consider ease and joyfulness as the purpose of life itself.
 keywords: hjb, csjiabin, csjiabin Blog, 黄佳滨的博客, huangjiabin, 黄佳滨, html, css, javascript, js, JavaScript, Node, node, nodejs, h5, html5, 小程序, vue
 author: csjiabin
 language: zh-CN
-? timezone
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://csjiabin.github.io
 root: /
 permalink: :year/:month/:day/:title/
-? permalink_defaults
+permalink_defaults:
 
 # Directory
 source_dir: source
@@ -46,7 +46,7 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  ? tab_replace
+  tab_replace:
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -59,8 +59,8 @@ index_generator:
 
 # Category & Tag
 default_category: uncategorized
-? category_map
-? tag_map
+category_map:
+tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -77,7 +77,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next-reload
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -122,3 +122,9 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
+
+excerpt:
+  depth: 3
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
