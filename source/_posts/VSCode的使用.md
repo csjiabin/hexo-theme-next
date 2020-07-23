@@ -1,5 +1,5 @@
 ---
-title: VS Code的使用.md
+title: VS Code的使用
 categories: 前端工具
 date: 2020-04-24 19:07:45
 subtitle:
@@ -14,7 +14,7 @@ tags:
 
 > 本文的最新内容，更新于**2019-11-08**。大家完全不用担心这篇文章会过时，因为随着 VS Code 的版本更新和插件更新，本文也会随之更新。
 
-> 本文的最新内容，也会在[GitHub](https://github.com/qianguyihao/Web/blob/master/00-%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/01-VS%20Code%E7%9A%84%E4%BD%BF%E7%94%A8.md)上同步更新，欢迎 star。
+<!-- > 本文的最新内容，也会在[GitHub](https://github.com/qianguyihao/Web/blob/master/00-%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/01-VS%20Code%E7%9A%84%E4%BD%BF%E7%94%A8.md)上同步更新，欢迎 star。 -->
 
 VS Code  本来是前端人员专用，但由于它实在是太好用了，于是，各种开发方向的码农也正在用 VS Code 作为他们的主力编程工具。甚至是一些写作的同学，也把 VS Code 作为 markdown 写作工具。
 
@@ -62,7 +62,7 @@ VS Code 的全称是 Visual Studio Code，是一款开源的、免费的、跨�
 
 VS Code 的安装很简单，直接去官网下载安装包，然后双击安装即可。
 
-![](http://img.smyhvae.com/20190313_1750_2.png)
+![](/uploads/post/20190313_1750_2.png)
 
 上图中，直接点击 download 下载安装即可。
 
@@ -165,24 +165,24 @@ VS Code用得熟不熟，首先就看你是否会用快捷键。以下列出的�
 
 当然，你也可以选择菜单栏「偏好设置 --> 键盘快捷方式」，进入快捷键的设置：
 
-![](http://img.smyhvae.com/20190329_2120.png)
+![](/uploads/post/20190329_2120.png)
 
 ### 快捷键列表
 
 你可以点击 VS Code 左下角的齿轮按钮，效果如下：
 
-![](http://img.smyhvae.com/20190418_1738.png)
+![](/uploads/post/20190418_1738.png)
 
 
 上图中，在展开的菜单中选择「键盘快捷方式」，就可以查看和修改所有的快捷键列表了：
 
-![](http://img.smyhvae.com/20190418_1739_2.png)
+![](/uploads/post/20190418_1739_2.png)
 
 ## 四、命令面板的使用
 
 Mac用户按住快捷键 `Cmd+Shift+P` （Windows用户按住快捷键`Ctrl+Shift+P`），可以打开命令面板。效果如下：
 
-![](http://img.smyhvae.com/20190329_1750_2.png)
+![](/uploads/post/20190329_1750_2.png)
 
 如果们需要修改一些设置项，可以通过「命令面板」来操作，效率会更高。这里列举一些。
 
@@ -190,7 +190,7 @@ Mac用户按住快捷键 `Cmd+Shift+P` （Windows用户按住快捷键`Ctrl+Shif
 
 在命令面板输入“字体”，可以进行字体的设置，效果如下：
 
-![](http://img.smyhvae.com/20190329_2110.png)
+![](/uploads/post/20190329_2110.png)
 
 当然，你也可以在菜单栏，选择「首选项-设置-常用设置」，在这个设置项里修改字体大小。
 
@@ -202,13 +202,13 @@ Mac用户按住快捷键 `Cmd+Shift+P` （Windows用户按住快捷键`Ctrl+Shif
 
 选中文本后，在命令面板中输入`transfrom`，就可以修改文本的大小写了。
 
-![](http://img.smyhvae.com/20190414_1751.png)
+![](/uploads/post/20190414_1751.png)
 
 ### 使用命令行启动 VS Code
 
 （1）输入快捷键「Cmd + Shift + P 」，选择`install code command`：
 
-![](http://img.smyhvae.com/20191103_1327.png)
+![](/uploads/post/20191103_1327.png)
 
 （2）使用命令行：
 
@@ -232,19 +232,19 @@ Mac用户按住快捷键 `Cmd+Shift+P` （Windows用户按住快捷键`Ctrl+Shif
 
 打开 VS Code 的设置项，选择「用户设置 -> 工作台 -> 导航路径」，如下图所示：
 
-![](http://img.smyhvae.com/20191108_1550.png)
+![](/uploads/post/20191108_1550.png)
 
 上图中，将红框部分打钩即可。
 
 设置成功后，我们就可以查看到当前文件的「层级结构」，非常方便。如下图所示：
 
-![](http://img.smyhvae.com/20190415_2009.png)
+![](/uploads/post/20190415_2009.png)
 
 ### 3、是否显示代码的行号
 
 VS Code 默认显示代码的行号。你可以在设置项里搜索 `editor.lineNumbers`修改设置，配置项如下：
 
-![](http://img.smyhvae.com/20190417_2140.png)
+![](/uploads/post/20190417_2140.png)
 
 我建议保留这个设置项，无需修改。
 
@@ -252,7 +252,7 @@ VS Code 默认显示代码的行号。你可以在设置项里搜索 `editor.lin
 
 VS Code 会在代码的右侧，默认显示缩略图。你可以在设置项里搜索 `editor.minimap`进行设置，配置项如下：
 
-![](http://img.smyhvae.com/20190417_2156.png)
+![](/uploads/post/20190417_2156.png)
 
 ### 6、将当前行代码高亮显示（更改光标所在行的背景色）
 
@@ -277,7 +277,7 @@ VS Code 会在代码的右侧，默认显示缩略图。你可以在设置项里
 
 改完代码后，默认不会自动保存。你可以在设置项里搜索`files.autoSave`，修改配置项如下：
 
-![](http://img.smyhvae.com/20190417_2216.png)
+![](/uploads/post/20190417_2216.png)
 
 上图中，我们将配置项修改为`onFocusChange`之后，那么，当光标离开该文件后，这个文件就会自动保存了。**非常方便**。
 
@@ -289,7 +289,7 @@ VS Code 会在代码的右侧，默认显示缩略图。你可以在设置项里
 
 保存代码后，默认**不会立即**进行代码的格式化。你可以在设置项里搜索`editor.formatOnSave`查看该配置项：
 
-![](http://img.smyhvae.com/20190417_2213.png)
+![](/uploads/post/20190417_2213.png)
 
 我觉得这个配置项保持默认就好，不用打钩。
 
@@ -301,21 +301,21 @@ VS Code 会根据你所打开的文件来决定该使用空格还是制表。也
 
 - **editor.detectIndentation**：自动检测（默认开启）。截图如下：
 
-![](http://img.smyhvae.com/20190417_2205.png)
+![](/uploads/post/20190417_2205.png)
 
 - **editor.insertSpaces**：按 Tab 键时插入空格（默认）。截图如下：
 
-![](http://img.smyhvae.com/20190417_2207.png)
+![](/uploads/post/20190417_2207.png)
 
 - **editor.tabSize**：一个制表符默认等于四个空格。截图如下：
 
-![](http://img.smyhvae.com/20190417_2209.png)
+![](/uploads/post/20190417_2209.png)
 
 ### 10、新建文件后的默认文件类型
 
 当我们按下快捷键「Cmd + N」新建文件时，VS Code 默认无法识别这个文件到底是什么类型的，因此也就无法识别相应的语法高亮。如果你想修改默认的文件类型，可以在设置项里搜索`files.defaultLanguage`，设置项如下：
 
-![](http://img.smyhvae.com/20190417_2221.png)
+![](/uploads/post/20190417_2221.png)
 
 上图中的红框部分，填入你期望的默认文件类型。我填的是`html`类型，你也可以填写成 `javascript` 或者 `markdown`，或者其他的语言类型。
 
@@ -323,7 +323,7 @@ VS Code 会根据你所打开的文件来决定该使用空格还是制表。也
 
 当我们在 VS Code 中删除文件时，默认会弹出确认框。如果你想修改设置，可以在设置项里搜索`xplorer.confirmDelete`。截图如下：
 
-![](http://img.smyhvae.com/20190418_1758.png)
+![](/uploads/post/20190418_1758.png)
 
 我建议这个设置项保持默认的打钩就好，不用修改。删除文件前的弹窗提示，也是为了安全考虑，万一手贱不小心删了呢？
 
@@ -333,11 +333,11 @@ VS Code 会根据你所打开的文件来决定该使用空格还是制表。也
 
 VS Code 默认支持**对比两个文件的内容**。选中两个文件，然后右键选择「将已选项进行比较」即可，效果如下：
 
-![](http://img.smyhvae.com/20190329_1756.png)
+![](/uploads/post/20190329_1756.png)
 
 VS Code自带的对比功能并不够强大，我们可以安装插件`compareit`，进行更丰富的对比。比如说，安装完插件`compareit`之后，我们可以将「当前文件」与「剪切板」里的内容进行对比：
 
-![](http://img.smyhvae.com/20190329_1757.png)
+![](/uploads/post/20190329_1757.png)
 
 ### 2、查找某个函数在哪些地方被调用了
 
@@ -375,13 +375,13 @@ VS Code自带的对比功能并不够强大，我们可以安装插件`compareit
 
 另外，你可能会注意到，搜索框里有很多按钮，每个按钮都对应着不同的功能，如下图所示：
 
-![](http://img.smyhvae.com/20190415_2052.png)
+![](/uploads/post/20190415_2052.png)
 
 上图中，你可以通过「Tab」键和「Shift + Tab」键在输入框和替换框之间进行切换。
 
 「在选定内容中查找」这个功能还是比较实用的。你也可以在设置项里搜索 `editor.find.autoFindInSelection`，勾选该设置项后，那么，当你选中指定内容后，然后按住「Cmd + F」，就可以**自动**只在这些内容里进行查找。该设置项如下图所示：
 
-![](http://img.smyhvae.com/20191108_1655.png)
+![](/uploads/post/20191108_1655.png)
 
 ### 6、全局搜索
 
@@ -389,7 +389,7 @@ VS Code自带的对比功能并不够强大，我们可以安装插件`compareit
 
 - Cmd + Shift + F（Win用户是Ctrl + Shift +F）：在全局的文件夹中进行搜索。效果如下：
 
-![](http://img.smyhvae.com/20190415_2107.png)
+![](/uploads/post/20190415_2107.png)
 
 上图中，你可以点击红框部分，展开更多的配置项。
 
@@ -397,7 +397,7 @@ VS Code自带的对比功能并不够强大，我们可以安装插件`compareit
 
 VS Code 自带了 Git 版本管理，如下图所示：
 
-![](http://img.smyhvae.com/20190418_1850.png)
+![](/uploads/post/20190418_1850.png)
 
 
 上图中，我们可以在这里进行常见的git 命令操作。如果你还不熟悉 **Git版本管理**，先去补补课吧。
@@ -418,12 +418,12 @@ VS Code 自带了 Git 版本管理，如下图所示：
 
 我们可以在新建文件夹的时候，如果直接输入`aa/bb/cc`，比如：
 
-![](http://img.smyhvae.com/20190418_2022.png)
+![](/uploads/post/20190418_2022.png)
 
 
 那么，就可以创建多层子文件夹，效果如下：
 
-![](http://img.smyhvae.com/20190418_2023.png)
+![](/uploads/post/20190418_2023.png)
 
 ### 10、.vscode 文件夹的作用
 
@@ -443,7 +443,7 @@ VS Code 自带了 Git 版本管理，如下图所示：
 
 VS Code自带 markdown 语法高亮，写完 md 文件之后，你可以点击右上角的按钮进行预览，如下图所示：
 
-![](http://img.smyhvae.com/20190418_1907.png)
+![](/uploads/post/20190418_1907.png)
 
 你也可以在控制面板输入`Markdown: 打开预览`，直接全屏预览 markdown文件。
 
@@ -470,7 +470,7 @@ VS Code 默认支持 Emmet。更多 Emmet 语法规则，请自行查阅。
 
 VS Code 有一个很强大的功能就是支持插件扩展。
 
-![](http://img.smyhvae.com/20191108_1553_2.png)
+![](/uploads/post/20191108_1553_2.png)
 
 上图中，点击红框部分，即可在输入框里，查找你想要的插件名，然后进行安装。
 
@@ -636,7 +636,7 @@ css 颜色管理。
 
 安装完成后，效果如下图所示：
 
-![](http://img.smyhvae.com/20190418_1958.png)
+![](/uploads/post/20190418_1958.png)
 
 ### RemoteHub
 
@@ -644,7 +644,7 @@ css 颜色管理。
 
 `RemoteHub`插件的作用是：可以在本地查看 GitHub 网站上的代码，而不需要将代码下载到本地。
 
-![](http://img.smyhvae.com/20190418_1937.png)
+![](/uploads/post/20190418_1937.png)
 
 这个插件目前使用的人还不多，赶紧安装起来尝尝鲜吧。
 
@@ -660,7 +660,7 @@ css 颜色管理。
 
 上图中，点击红框部分，登录后就可以分享你的工作空间了。
 
-![](http://img.smyhvae.com/20190418_2005.png)
+![](/uploads/post/20190418_2005.png)
 
 ### vscode-pigments
 
