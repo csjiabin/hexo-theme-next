@@ -6,6 +6,7 @@ tags:
   - hexo
   - github
   - node
+  - git
 ---
 
 ## 前言
@@ -104,7 +105,10 @@ npm install -g hexo-cli
 
 ### 用法
 
-在这里以[HUX博客](/hux/)主题为例子(也可以按 hexo 官方文档进行搭建)，移植的主题 [Hux Blog](https://github.com/Huxpro/huxpro.github.io)，我为了您的方便而发布整个项目，因此您只需按照下面的说明操作，即可轻松自定义您自己的博客！ 让我们开始！！！
+在这里以[HUX 博客](/hux/)主题为例子(也可以按 hexo 官方文档进行搭建)，移植的主题 [Hux Blog](https://github.com/Huxpro/huxpro.github.io)，我为了您的方便而发布整个项目，因此您只需按照下面的说明操作，即可轻松自定义您自己的博客！ 让我们开始！！！
+
+- [**预览地址**](https://csjiabin.github.io/example/hux)
+
 ![](/uploads/post/WX20180826-004151@2x.png)
 
 #### 初始化
