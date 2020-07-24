@@ -1,6 +1,6 @@
 ---
 title: Git的使用
-categories: 前端工具
+categories: 工具
 date: 2020-07-23 13:52:30
 subtitle:
 tags:

@@ -1,6 +1,6 @@
 ---
 title: VS Code的使用
-categories: 前端工具
+categories: 工具
 date: 2020-04-24 19:07:45
 subtitle:
 tags:
