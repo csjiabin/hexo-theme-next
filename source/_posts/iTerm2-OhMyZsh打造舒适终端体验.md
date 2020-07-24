@@ -45,6 +45,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+> 安装oh my zsh失败：curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused 
+> 解决方案参考地址：https://blog.csdn.net/huangpin815/article/details/105606135
 ### 安装 PowerLine
 
 Powerline 是 agnoster 主题的依赖。具体可以在 repo 里查询到：https://github.com/agnoster/agnoster-zsh-theme
