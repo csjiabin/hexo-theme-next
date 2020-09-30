@@ -8,8 +8,8 @@
     "clean": "hexo clean",
     "build": "hexo g",
     "new": "hexo new",
-    "publish": "npm run clean && npm run build && npm run gulp && hexo d",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "publish": "npm run clean && npm run build && npm run gulp && hexo d"
   },
   "hexo": {
     "version": "4.2.0"
