@@ -1,7 +1,7 @@
 ---
 title: vue-rws是Vuejs的reconnecting-websocket集成
 categories: other
-date: 2021-06-12 23:53:45
+date: 2021-05-01 12:53:45
 subtitle: vue-rws 是 Vuejs 的 reconnecting-websocket 集成，简单易用，支持 Vuex 和组件级 socket 使用管理
 tags:
   - vue
