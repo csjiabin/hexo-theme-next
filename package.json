@@ -9,6 +9,7 @@
     "build": "hexo g",
     "new": "hexo new",
     "gulp": "gulp",
+    "deploy": "hexo d",
     "publish": "npm run clean && npm run build && npm run gulp && hexo d"
   },
   "hexo": {
