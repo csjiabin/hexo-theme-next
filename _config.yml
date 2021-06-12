@@ -86,7 +86,7 @@ deploy:
   repository:
     github: https://github.com/csjiabin/csjiabin.github.io.git
     # coding: https://git.coding.net/csjiabin/csjiabin.coding.me.git
-    gitee: https://gitee.com/csjiabin/csjiabin.gitee.io.git
+    # gitee: https://gitee.com/csjiabin/csjiabin.gitee.io.git
   branch: master
 
 search:
