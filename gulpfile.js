@@ -80,7 +80,7 @@ gulp.task(
     "minify-html",
     "minify-css",
     "minify-js",
-    "minify-images",
+    // "minify-images",
     "minify-images-uploads",
   ])
 );
